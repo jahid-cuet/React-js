@@ -7,6 +7,9 @@ import Calculator from './Calculator';
 import Text from './composition/Text'
 import Emoji from './composition/Emoji'
 
+import  ClickCounter from './ClickCounter'
+import HoverCounter from './HoverCounter'
+
 function App() {
 // const quantities=[1,2,3];
   return (
@@ -16,9 +19,12 @@ function App() {
 
     {/* <Calculator/> */}
     {/* <Text/> */}
-<Emoji>
+{/* <Emoji>
   {({ addEmoji }) => <Text addEmoji={addEmoji} />}
-</Emoji>
+</Emoji> */}
+
+  <ClickCounter />
+  <HoverCounter />
     </>
   )
 }
