@@ -3,6 +3,9 @@ import ClockList from './ClockList';
 import Form from './Form';
 import Calculator from './Calculator';
 
+// import Text from './inheritance/Text'
+import Text from './composition/Text'
+import Emoji from './composition/Emoji'
 
 function App() {
 // const quantities=[1,2,3];
@@ -11,7 +14,11 @@ function App() {
     {/* <div> < ClockList  quantities={quantities}/></div>     */}
     {/* <div> < Form/></div>     */}
 
-    <Calculator/>
+    {/* <Calculator/> */}
+    {/* <Text/> */}
+<Emoji>
+  {({ addEmoji }) => <Text addEmoji={addEmoji} />}
+</Emoji>
     </>
   )
 }
