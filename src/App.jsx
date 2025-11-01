@@ -9,22 +9,20 @@ import Emoji from './composition/Emoji'
 
 import  ClickCounter from './ClickCounter'
 import HoverCounter from './HoverCounter'
+import Counter from './Counter'
 
 function App() {
-// const quantities=[1,2,3];
+
   return (
     <>
-    {/* <div> < ClockList  quantities={quantities}/></div>     */}
-    {/* <div> < Form/></div>     */}
 
-    {/* <Calculator/> */}
-    {/* <Text/> */}
-{/* <Emoji>
-  {({ addEmoji }) => <Text addEmoji={addEmoji} />}
-</Emoji> */}
-
-  <ClickCounter />
   <HoverCounter />
+
+  <Counter  
+  render={(count, incrementCount) => (
+    <ClickCounter count={count} incrementCount={incrementCount} />
+  )}
+/> 
     </>
   )
 }

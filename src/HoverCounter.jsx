@@ -15,7 +15,7 @@ export default class HoverCounter extends React.Component{
 return(
 
     <div>
-    <h1 onMouseOver={this.incrementCount} >Click {count} times</h1>
+    <h1 onMouseOver={this.incrementCount} > Hovered {count} times</h1>
     </div>
 
 )
