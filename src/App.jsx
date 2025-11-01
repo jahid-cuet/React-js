@@ -9,22 +9,39 @@ import Emoji from './composition/Emoji'
 
 import  ClickCounter from './ClickCounter'
 import HoverCounter from './HoverCounter'
-import Counter from './Counter'
+import Counter from './Counter';
+import Section from './section';
+import React, { Component } from "react";
+import themeContext from './themeContext';
+class App extends Component {
 
-function App() {
+  state={
+    theme: 'light'
+  }
 
-  return (
-    <>
+switchTheme = () => {
+  this.setState(({ theme }) => {
+    if (theme === 'dark') {
+      return { theme: 'light' };
+    } else {
+      return { theme: 'dark' };
+    }
+  });
+};
 
-  <HoverCounter />
+  render() {
+    
+    const {theme}=this.state;
+    return (
+      <>
+        <HoverCounter />
+        <themeContext.Provider value={{theme, switchTheme:this.switchTheme}}>
+        <Section/></themeContext.Provider>
 
-  <Counter  
-  render={(count, incrementCount) => (
-    <ClickCounter count={count} incrementCount={incrementCount} />
-  )}
-/> 
-    </>
-  )
+     
+      </>
+    );
+  }
 }
 
-export default App
+export default App;

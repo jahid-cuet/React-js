@@ -1,20 +1,21 @@
 import React from 'react';
-export default class ClickCounter extends React.Component{
+export default function ClickCounter({count,incrementCount,theme,switchTheme}){
     
-    render(){
-       const {count,incrementCount}=this.props;
-
+  const style= theme==='dark'?{
+    backgroundColor: '#000000', color: '#ffffff'
+  } :null
 return(
-
     <div>
-  <button type="button" onClick={incrementCount}>
+  <button type="button" onClick={incrementCount} style={style}>
         Clicked {count} times
       </button>
+
+  <button type='button' onClick={switchTheme}>Change Theme</button>
     </div>
 
 )
 
     }
-}
+
 
 
